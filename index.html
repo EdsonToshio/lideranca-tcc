@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Guia aplicado de Liderança para TCCs de Administração — conexão entre problema, evidência, implantação, governança e escrita acadêmica.">
+<title>Liderança no TCC | Guia Aplicado 2026</title>
+<style>
+:root{
+  --navy:#0b1f3a; --navy2:#12335d; --blue:#155e75; --teal:#0f766e;
+  --gold:#c9962d; --ink:#172033; --muted:#5c6778; --paper:#ffffff;
+  --bg:#f3f6f9; --line:#dfe5ec; --soft:#eef4f7; --green:#16794f;
+  --red:#b42318; --amber:#9a6700; --purple:#6941c6; --shadow:0 14px 35px rgba(11,31,58,.10);
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.62}
+button,input,select{font:inherit}
+a{color:var(--blue)}
+.topbar{background:var(--navy);color:#fff;border-bottom:4px solid var(--gold)}
+.hero{max-width:1380px;margin:auto;padding:34px 28px 28px;display:grid;grid-template-columns:1fr auto;gap:26px;align-items:end}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;text-transform:uppercase;letter-spacing:.12em;font-size:.74rem;font-weight:800;color:#dce8f5;margin-bottom:8px}
+.hero h1{font-size:clamp(2rem,4vw,3.45rem);line-height:1.02;margin:0 0 12px;letter-spacing:-.035em}
+.hero p{max-width:880px;margin:0;color:#dce6f0;font-size:1.06rem}
+.hero-badge{min-width:210px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:16px;padding:18px 20px}
+.hero-badge strong{font-size:1.8rem;display:block}.hero-badge span{font-size:.84rem;color:#dce6f0}
+.nav-wrap{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);box-shadow:0 4px 18px rgba(11,31,58,.05)}
+.nav{max-width:1380px;margin:auto;padding:0 18px;display:flex;overflow-x:auto;scrollbar-width:thin}
+.nav a{border:0;background:transparent;white-space:nowrap;padding:17px 17px 14px;color:#4b5768;font-weight:750;cursor:pointer;border-bottom:3px solid transparent;display:block;text-decoration:none;user-select:none;-webkit-user-select:none;touch-action:manipulation}
+.nav a:hover{color:var(--navy)}
+.nav a[href="#inicio"]{color:var(--navy);border-color:var(--gold);background:#fbfcfe}
+body:has(.tab:target) .nav a[href="#inicio"]{color:#4b5768;border-color:transparent;background:transparent}
+body:has(#inicio:target) .nav a[href="#inicio"],body:has(#rotas:target) .nav a[href="#rotas"],body:has(#projetos:target) .nav a[href="#projetos"],body:has(#instrumentos:target) .nav a[href="#instrumentos"],body:has(#exemplos:target) .nav a[href="#exemplos"],body:has(#escrita:target) .nav a[href="#escrita"],body:has(#checklist:target) .nav a[href="#checklist"]{color:var(--navy);border-color:var(--gold);background:#fbfcfe}
+.shell{max-width:1380px;margin:26px auto 60px;padding:0 22px}
+.tab{display:none;scroll-margin-top:78px}main>.tab:first-child{display:block}main:has(.tab:target) .tab{display:none}main:has(.tab:target) .tab:target{display:block;animation:fade .22s ease}@keyframes fade{from{opacity:.4;transform:translateY(4px)}to{opacity:1;transform:none}}
+.section-head{display:flex;justify-content:space-between;gap:20px;align-items:flex-start;margin:10px 0 20px}.section-head h2{font-size:clamp(1.65rem,2.7vw,2.35rem);line-height:1.12;margin:0;color:var(--navy);letter-spacing:-.025em}.section-head p{margin:8px 0 0;color:var(--muted);max-width:880px}.pill{display:inline-flex;align-items:center;gap:7px;padding:7px 11px;border-radius:999px;background:#e7f1f5;color:var(--blue);font-weight:800;font-size:.78rem;white-space:nowrap}
+.grid{display:grid;gap:16px}.g2{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:repeat(3,minmax(0,1fr))}.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:21px;box-shadow:0 4px 16px rgba(11,31,58,.045)}
+.card h3,.card h4{color:var(--navy);margin:0 0 9px}.card h3{font-size:1.17rem}.card p{margin:7px 0;color:#3c4756}.card ul{margin:10px 0 0;padding-left:20px}.card li{margin:6px 0}.accent{border-top:4px solid var(--gold)}
+.callout{border-radius:16px;padding:21px 23px;margin:18px 0;border:1px solid}.callout h3,.callout h4{margin:0 0 8px}.callout p{margin:5px 0}.info{background:#edf7fa;border-color:#c9e6ee}.success{background:#edf8f2;border-color:#cdebdc}.warn{background:#fff7e8;border-color:#f2d9a5}.danger{background:#fff2f0;border-color:#f2c6c0}
+.big-rule{background:linear-gradient(120deg,var(--navy),#164b69);color:#fff;padding:28px;border-radius:18px;box-shadow:var(--shadow);margin:16px 0 22px}.big-rule .label{color:#aee7df;text-transform:uppercase;font-weight:850;letter-spacing:.11em;font-size:.73rem}.big-rule h3{font-size:clamp(1.35rem,2.5vw,2.1rem);line-height:1.25;margin:8px 0 10px}.big-rule p{color:#e5eef6;margin:0;max-width:1080px}
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:20px 0}.flow .node{background:#fff;border:1px solid var(--line);border-radius:14px;padding:17px 14px;position:relative}.flow .node:not(:last-child):after{content:"→";position:absolute;right:-15px;top:50%;transform:translateY(-50%);font-weight:900;color:var(--gold);font-size:1.3rem;z-index:2}.node small{display:block;color:var(--muted);font-weight:700}.node strong{color:var(--navy)}
+.route{position:relative;overflow:hidden}.route .num{font-size:2.7rem;line-height:1;color:#d7e0e9;font-weight:900;position:absolute;right:16px;top:12px}.route .route-tag{display:inline-block;font-weight:800;font-size:.75rem;padding:5px 9px;border-radius:999px;background:var(--soft);color:var(--blue);margin-bottom:8px}.route.a{border-top:4px solid var(--purple)}.route.b{border-top:4px solid #0e7490}.route.c{border-top:4px solid var(--gold)}.route.d{border-top:4px solid var(--green)}
+.table-wrap{overflow-x:auto;border-radius:15px;border:1px solid var(--line);background:#fff}.table{width:100%;border-collapse:collapse;min-width:880px}.table th{background:var(--navy);color:#fff;text-align:left;padding:14px 15px;font-size:.85rem;letter-spacing:.01em}.table td{padding:14px 15px;border-bottom:1px solid var(--line);vertical-align:top}.table tr:last-child td{border-bottom:0}.table tbody tr:hover{background:#f8fbfd}.tag{display:inline-block;border-radius:999px;padding:4px 8px;font-size:.72rem;font-weight:850}.tag-a{background:#eee9fb;color:#5c3db2}.tag-b{background:#e4f5f8;color:#0e6a7e}.tag-c{background:#fff2d6;color:#865c00}.tag-d{background:#e4f4ea;color:#17603e}.tag-no{background:#fde8e6;color:var(--red)}.tag-maybe{background:#fff3d8;color:#795400}.tag-yes{background:#e5f5ec;color:#14643f}
+.decision{counter-reset:step}.decision .q{background:#fff;border:1px solid var(--line);border-left:5px solid var(--teal);border-radius:12px;padding:17px 19px;margin:11px 0}.decision .q:before{counter-increment:step;content:counter(step);display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--navy);color:#fff;font-weight:900;margin-right:10px}.decision .q strong{color:var(--navy)}.answer{margin:9px 0 0 39px;color:#435064}
+.project-toolbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:0 0 15px}.project-toolbar input{flex:1;min-width:230px;border:1px solid #cad3dd;border-radius:10px;padding:11px 13px;background:#fff}.project-toolbar .counter{font-size:.85rem;color:var(--muted)}
+details.project{background:#fff;border:1px solid var(--line);border-radius:15px;margin:12px 0;overflow:hidden;box-shadow:0 3px 12px rgba(11,31,58,.04)}details.project summary{cursor:pointer;list-style:none;padding:18px 20px;display:grid;grid-template-columns:minmax(190px,.8fr) minmax(350px,2.2fr) auto;gap:16px;align-items:center}details.project summary::-webkit-details-marker{display:none}details.project summary:after{content:"＋";font-size:1.25rem;font-weight:500;color:var(--blue)}details.project[open] summary:after{content:"−"}details.project[open] summary{border-bottom:1px solid var(--line);background:#fbfcfd}.student{font-weight:900;color:var(--navy)}.project-title{font-size:.92rem;color:#485568}.project-body{padding:20px}.project-body h4{margin:18px 0 7px;color:var(--navy)}.project-body h4:first-child{margin-top:0}.mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.mini{background:#f7f9fb;border:1px solid var(--line);border-radius:11px;padding:13px}.mini strong{display:block;color:var(--navy);font-size:.85rem;margin-bottom:3px}.mini p{margin:0;font-size:.9rem;color:#495568}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:15px 0}.bad,.good{border-radius:14px;padding:18px;border:1px solid}.bad{background:#fff3f1;border-color:#f1cbc6}.good{background:#eff8f3;border-color:#c8e8d5}.badge{display:inline-block;font-size:.74rem;font-weight:900;text-transform:uppercase;letter-spacing:.05em;margin-bottom:7px}.bad .badge{color:var(--red)}.good .badge{color:var(--green)}.compare p{margin:5px 0}.ladder{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.level{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px}.level:nth-child(1){border-top:4px solid var(--red)}.level:nth-child(2){border-top:4px solid var(--amber)}.level:nth-child(3){border-top:4px solid var(--green)}
+.instrument{border-left:5px solid var(--blue)}.instrument .meta{display:flex;gap:7px;flex-wrap:wrap;margin:7px 0}.micro{font-size:.75rem;background:#eef2f6;padding:4px 8px;border-radius:999px;font-weight:780;color:#526071}.license{color:var(--red);font-weight:750}
+.recipe{display:grid;grid-template-columns:70px 1fr;gap:15px;align-items:start;margin:12px 0}.recipe .rnum{width:54px;height:54px;border-radius:14px;background:var(--navy);color:#fff;display:grid;place-items:center;font-size:1.25rem;font-weight:900}.recipe .rbody{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px}.recipe h4{margin:0 0 5px;color:var(--navy)}.recipe p{margin:4px 0}
+.formula{display:grid;grid-template-columns:repeat(6,1fr);gap:7px;margin:16px 0}.formula div{padding:13px 9px;text-align:center;border-radius:11px;background:#e9f0f5;color:var(--navy);font-weight:850;font-size:.82rem}.formula div:after{content:""}
+.check-group{background:#fff;border:1px solid var(--line);border-radius:15px;padding:18px 20px;margin:13px 0}.check-group h3{margin:0 0 10px;color:var(--navy)}.check{display:flex;gap:11px;align-items:flex-start;padding:8px 0;border-bottom:1px dashed #e1e6eb}.check:last-child{border-bottom:0}.check input{margin-top:5px;width:18px;height:18px;accent-color:var(--teal)}.progress{height:10px;background:#dfe6ec;border-radius:999px;overflow:hidden}.progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--teal),#4aa88b);transition:width .2s}.progress-label{display:flex;justify-content:space-between;font-size:.83rem;color:var(--muted);margin:6px 0 15px}
+.refs{font-size:.9rem;color:#475366}.refs li{margin:8px 0}
+.footer{max-width:1380px;margin:auto;padding:26px 22px 45px;color:#687386;font-size:.86rem}.footer strong{color:var(--navy)}
+.print-btn{border:1px solid #cad5df;background:#fff;border-radius:10px;padding:9px 13px;cursor:pointer;font-weight:800;color:var(--navy)}.print-btn:hover{background:#f3f6f8}
+@media(max-width:1050px){.g4{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:1fr 1fr}.flow{grid-template-columns:1fr}.flow .node:not(:last-child):after{content:"↓";right:auto;left:50%;top:auto;bottom:-22px}.formula{grid-template-columns:repeat(3,1fr)}.mini-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:720px){.hero{grid-template-columns:1fr;padding:27px 20px}.hero-badge{display:none}.shell{padding:0 13px}.g2,.g3,.g4,.compare,.ladder{grid-template-columns:1fr}.section-head{display:block}.pill{margin-top:10px}.mini-grid{grid-template-columns:1fr}details.project summary{grid-template-columns:1fr auto}.project-title{grid-column:1/-1;grid-row:2}.formula{grid-template-columns:1fr 1fr}.recipe{grid-template-columns:45px 1fr}.recipe .rnum{width:42px;height:42px}.card{padding:17px}.nav a{padding-left:13px;padding-right:13px}}
+@media print{body{background:#fff}.topbar{background:#fff;color:#000;border-bottom:2px solid #000}.hero p,.hero-badge span{color:#333}.nav-wrap,.print-btn,.project-toolbar{display:none!important}.shell{max-width:none;margin:0;padding:0}.tab{display:block!important;page-break-before:always}.tab:first-of-type{page-break-before:auto}.card,details.project,.callout,.big-rule{box-shadow:none;break-inside:avoid}.big-rule{background:#fff;color:#000;border:2px solid #333}.big-rule p{color:#333}details.project .project-body{display:block!important}details.project:not([open]) .project-body{display:block}.footer{padding:12px 0}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="hero">
+    <div>
+      <div class="eyebrow">Administração · Orientação Integrada II · Liderança</div>
+      <h1>Liderança no TCC</h1>
+      <p>Um guia prático para você identificar <strong>onde a liderança entra</strong> no seu trabalho e transformá-la em análise, evidência, implantação e texto acadêmico consistente.</p>
+    </div>
+    <div class="hero-badge"><strong>8 TCCs</strong><span>mapeados nesta versão · 2026.2</span></div>
+  </div>
+</header>
+<nav class="nav-wrap" aria-label="Navegação principal">
+  <div class="nav">
+    <a href="#inicio">01 · Comece aqui</a>
+    <a href="#rotas">02 · 4 conexões</a>
+    <a href="#projetos">03 · Os 8 TCCs</a>
+    <a href="#instrumentos">04 · Método e instrumentos</a>
+    <a href="#exemplos">05 · Do fraco ao defendível</a>
+    <a href="#escrita">06 · Como vira texto</a>
+    <a href="#checklist">07 · Checklist final</a>
+  </div>
+</nav>
+<main class="shell">
+<section id="inicio" class="tab">
+  <div class="section-head">
+    <div><h2>Descubra onde a liderança entra no seu TCC</h2><p>Seu trabalho parte de um problema real de Administração. A tarefa desta orientação é identificar quais decisões, pessoas, responsabilidades e ações gerenciais influenciam esse problema — e mostrar isso com evidências no texto.</p></div>
+    <button class="print-btn" onclick="window.print()">Imprimir / salvar em PDF</button>
+  </div>
+  <div class="big-rule">
+    <div class="label">Regra de ouro</div>
+    <h3>Liderança entra no seu TCC quando uma decisão, uma ação gerencial ou a coordenação de pessoas interfere no problema ou na solução estudada.</h3>
+    <p>Procure situações concretas: alguém precisa interpretar dados, definir prioridades, comunicar uma mudança, envolver pessoas, treinar a equipe, distribuir responsabilidades, acompanhar indicadores, dar feedback, corrigir desvios ou sustentar uma implantação. É daí que nasce a análise de liderança do seu trabalho.</p>
+  </div>
+  <div class="flow" aria-label="Fluxo de análise">
+    <div class="node"><small>1. Problema</small><strong>O que precisa mudar?</strong></div>
+    <div class="node"><small>2. Pessoas e decisão</small><strong>Quem influencia o resultado?</strong></div>
+    <div class="node"><small>3. Evidência</small><strong>Como sabemos o que ocorre?</strong></div>
+    <div class="node"><small>4. Ação gerencial</small><strong>O que a liderança deve fazer?</strong></div>
+    <div class="node"><small>5. Resultado</small><strong>Como saberemos se funcionou?</strong></div>
+  </div>
+  <div class="grid g3">
+    <article class="card accent"><h3>Parta do seu problema</h3><p>Localize no seu próprio TCC onde existem decisões, coordenação, comunicação, desenvolvimento de pessoas, adoção de mudanças ou acompanhamento de resultados. A liderança deve nascer desse ponto, e não de um capítulo isolado.</p></article>
+    <article class="card accent"><h3>Mostre comportamentos e responsabilidades</h3><p>Em vez de escrever apenas “o gestor é importante”, descreva o que ele precisa fazer: quem decide, quem comunica, quem treina, quem acompanha, quem recebe o resultado e quem corrige a rota.</p></article>
+    <article class="card accent"><h3>Transforme recomendação em plano de ação</h3><p>Uma recomendação forte responde: <strong>quem</strong> faz, <strong>o quê</strong>, <strong>quando</strong>, com <strong>qual evidência</strong>, diante de <strong>qual gatilho</strong> e medido por <strong>qual indicador</strong>.</p></article>
+  </div>
+  <div class="callout info">
+    <h3>A lógica que você vai usar ao longo do guia</h3>
+    <p><strong>Problema → papel gerencial → evidência → ação → indicador.</strong> Primeiro identifique o problema. Depois descubra quem precisa agir e qual é sua responsabilidade. Em seguida, mostre a evidência que sustenta essa análise, detalhe a ação proposta e defina como o resultado será acompanhado.</p>
+  </div>
+</section>
+
+<section id="rotas" class="tab">
+  <div class="section-head"><div><h2>As quatro portas de entrada da liderança</h2><p>Escolha a rota que corresponde ao seu TCC. Um trabalho pode combinar duas rotas, mas não precisa usar todas.</p></div><span class="pill">Diagnóstico antes da teoria</span></div>
+  <div class="grid g4">
+    <article class="card route a"><span class="num">A</span><span class="route-tag">Liderança é variável</span><h3>O próprio fenômeno pesquisado</h3><p>O problema ou objetivo pergunta diretamente por estilo, comportamento ou qualidade da liderança.</p><ul><li>Exige definição teórica clara.</li><li>Pode justificar instrumento validado.</li><li>Precisa de amostra compatível.</li></ul></article>
+    <article class="card route b"><span class="num">B</span><span class="route-tag">Liderança é mecanismo</span><h3>Afeta outro resultado</h3><p>A liderança aparece como apoio, comunicação, confiança, feedback ou relação que pode influenciar engajamento, desempenho ou adoção.</p><ul><li>Separe causa/mecanismo de resultado.</li><li>Meça construtos diferentes separadamente.</li><li>Evite afirmar causalidade sem desenho que sustente.</li></ul></article>
+    <article class="card route c"><span class="num">C</span><span class="route-tag">Liderança é governança</span><h3>Faz a solução funcionar</h3><p>O TCC propõe app, dashboard, matriz, processo, campanha ou melhoria e alguém precisa patrocinar, decidir, coordenar, treinar, monitorar e corrigir.</p><ul><li>É uma conexão muito frequente nos TCCs deste semestre.</li><li>Não exige escala de estilo por padrão.</li><li>Exige papéis, rituais, critérios e indicadores.</li></ul></article>
+    <article class="card route d"><span class="num">D</span><span class="route-tag">Liderança é capacidade gerencial</span><h3>O dono precisa virar gestor</h3><p>Em micro e pequenos negócios, a questão pode ser a transição de “faço tudo” para planejar, delegar, desenvolver pessoas e estruturar o negócio.</p><ul><li>Amostras pequenas favorecem qualitativo.</li><li>Observe papéis e decisões reais.</li><li>Não force escalas pensadas para equipes maiores.</li></ul></article>
+  </div>
+  <h3 style="color:var(--navy);margin-top:28px">Árvore de decisão rápida</h3>
+  <div class="decision">
+    <div class="q"><strong>“Liderança” aparece no problema ou objetivo de pesquisa?</strong><div class="answer">Sim → a Rota A pode fazer sentido. Não → continue; provavelmente liderança é mecanismo ou implantação.</div></div>
+    <div class="q"><strong>O trabalho quer explicar um resultado humano — engajamento, confiança, adesão, desempenho?</strong><div class="answer">Sim → avalie a Rota B e defina precisamente qual comportamento ou relação de liderança será estudado.</div></div>
+    <div class="q"><strong>A principal entrega é implantar ou melhorar algo?</strong><div class="answer">Sim → comece pela Rota C: patrocinador, responsabilidades, comunicação, treinamento, cadência de gestão, feedback, decisão e KPI.</div></div>
+    <div class="q"><strong>Há equipe suficiente para responder a uma escala sobre a chefia?</strong><div class="answer">Não → entrevista, observação, análise documental e matriz de responsabilidades podem gerar evidência melhor que uma escala aplicada a duas pessoas.</div></div>
+    <div class="q"><strong>A coleta prevista é apenas bibliográfica/documental?</strong><div class="answer">Sim → não invente um questionário de liderança. Discuta, com literatura, que capacidades e práticas gerenciais são necessárias para a solução.</div></div>
+  </div>
+  <div class="callout warn"><h3>Quando estilos de liderança entram?</h3><p><strong>Depois</strong> de o desenho da pesquisa mostrar que estilo ou comportamento gerencial é relevante. Transformacional, transacional, situacional, relacionamento/tarefa e outras abordagens são lentes de análise — não um requisito obrigatório de todo TCC de Administração.</p></div>
+</section>
+
+<section id="projetos" class="tab">
+  <div class="section-head"><div><h2>Como liderança se conecta aos oito TCCs atuais</h2><p>O foco abaixo não é mudar o tema de cada trabalho. É mostrar onde a dimensão de liderança agrega rigor e aplicabilidade ao que já está sendo pesquisado.</p></div><span class="pill">Versão 10/08/2026</span></div>
+  <div class="project-toolbar"><input id="projectSearch" type="search" placeholder="Buscar aluno, tema, palavra-chave..." aria-label="Buscar projeto"><span id="projectCount" class="counter">8 projetos</span></div>
+
+  <details class="project" data-search="thamires compras dashboard indicadores decisão macroeconomia governança">
+    <summary><span class="student">Thamires Jesus da Silva</span><span class="project-title">Dashboard estratégico para a área de compras em cenários macroeconômicos instáveis</span><span class="tag tag-c">Rota C</span></summary>
+    <div class="project-body">
+      <div class="mini-grid"><div class="mini"><strong>Onde liderança entra</strong><p>Na transformação de dado em decisão: leitura dos KPIs, priorização, resposta a desvios e adaptação das decisões de compras.</p></div><div class="mini"><strong>Evidência útil</strong><p>Planilhas, formulários, histórico de compras, indicadores do dashboard e registro das decisões tomadas a partir deles.</p></div><div class="mini"><strong>Instrumento de estilo?</strong><p><span class="tag tag-no">Não, por padrão</span> O foco é governança decisória, não perfil do gestor.</p></div></div>
+      <h4>O que precisa aparecer no TCC</h4><p>Definir <strong>quem lê o dashboard, com qual periodicidade, que tipos de desvios exigem ação, quem pode aprovar ajustes e como a decisão fica registrada</strong>. O dashboard não é a solução completa: a solução é o sistema gerencial que transforma informação em ação.</p>
+      <div class="compare"><div class="bad"><span class="badge">Evite</span><p>“A liderança deverá acompanhar os indicadores e tomar decisões mais assertivas.”</p></div><div class="good"><span class="badge">Faça</span><p>Descreva uma rotina de revisão dos indicadores de consumo, preço, prioridade e variação; defina o responsável pela análise; estabeleça critérios de exceção; registre decisão, ação corretiva, responsável e resultado posterior. Depois compare se as decisões ficaram mais rápidas, rastreáveis ou economicamente melhores.</p></div></div>
+    </div>
+  </details>
+
+  <details class="project" data-search="raquel transformação digital despesas corporativas aplicativo mudança resistência treinamento adoção">
+    <summary><span class="student">Raquel Tenorio</span><span class="project-title">Transformação digital na prestação de contas de despesas corporativas em multinacional</span><span class="tag tag-c">Rota C + B</span></summary>
+    <div class="project-body">
+      <div class="mini-grid"><div class="mini"><strong>Onde liderança entra</strong><p>Patrocínio da mudança, escuta dos usuários, comunicação de benefícios, treinamento, remoção de barreiras e adoção do novo processo.</p></div><div class="mini"><strong>Evidência útil</strong><p>Entrevistas/questionários com usuários, observação do processo, tempo de execução, erros, etapas manuais, uso de papel e adesão ao app.</p></div><div class="mini"><strong>Instrumento de estilo?</strong><p><span class="tag tag-maybe">Só se virar variável</span> Para a proposta atual, mudança e adoção são mais centrais.</p></div></div>
+      <h4>O que precisa aparecer no TCC</h4><p>Além do protótipo ou solução digital, mostrar <strong>como a organização conduzirá a transição</strong>: quem patrocina; quais usuários participam do piloto; como feedback é incorporado; como se comunica a mudança; quem treina; como dúvidas e resistência são tratadas; quais métricas indicam adoção.</p>
+      <div class="compare"><div class="bad"><span class="badge">Evite</span><p>“Os líderes devem motivar os colaboradores a aceitar o novo aplicativo.”</p></div><div class="good"><span class="badge">Faça</span><p>Estruture um plano de adoção: envolvimento de usuários na validação, comunicação focada no problema que o app elimina, treinamento prático, canal de suporte, registro de obstáculos e acompanhamento de indicadores como tempo do processo, erros, volume de papel e uso efetivo da solução.</p></div></div>
+    </div>
+  </details>
+
+  <details class="project" data-search="kevelin auditoria externa inovação tecnologia inteligência artificial governança capacitação adaptação">
+    <summary><span class="student">Kevelin Nery Borges</span><span class="project-title">Inovação na auditoria externa e sua importância para a gestão organizacional</span><span class="tag tag-c">Rota C</span></summary>
+    <div class="project-body">
+      <div class="mini-grid"><div class="mini"><strong>Onde liderança entra</strong><p>Na governança da adoção tecnológica: qualificação, ética, controles, responsabilidade, interpretação dos achados e apoio à tomada de decisão.</p></div><div class="mini"><strong>Evidência útil</strong><p>Na versão atual, sobretudo literatura científica e documental sobre inovação, auditoria, governança, risco e capacitação.</p></div><div class="mini"><strong>Instrumento de estilo?</strong><p><span class="tag tag-no">Não no desenho atual</span> A pesquisa é bibliográfica; uma escala criaria outro estudo.</p></div></div>
+      <h4>O que precisa aparecer no TCC</h4><p>Em vez de inserir uma seção genérica de “liderança transformacional”, organizar uma discussão sobre <strong>responsabilidades gerenciais para adoção responsável da tecnologia</strong>: capacitar profissionais, estabelecer critérios de supervisão, preservar julgamento profissional, garantir accountability, tratar riscos e converter achados de auditoria em decisões.</p>
+      <div class="compare"><div class="bad"><span class="badge">Evite</span><p>“É importante que o líder seja inovador e incentive a equipe.”</p></div><div class="good"><span class="badge">Faça</span><p>Mostre, pela literatura, quais decisões de governança precisam acompanhar IA e automação: competências necessárias, revisão humana, limites de uso, responsabilidades, tratamento de exceções e mecanismos de controle. A liderança aparece como arquitetura de responsabilidade, não como adjetivo.</p></div></div>
+    </div>
+  </details>
+
+  <details class="project" data-search="isabelly comunicação interna engajamento ti projetos suzano sharepoint viva engage liderança apoio feedback">
+    <summary><span class="student">Isabelly Ferreira dos Santos</span><span class="project-title">Comunicação interna e engajamento em equipes de projetos de Tecnologia da Informação</span><span class="tag tag-b">Rota B</span></summary>
+    <div class="project-body">
+      <div class="mini-grid"><div class="mini"><strong>Onde liderança entra</strong><p>Na qualidade do apoio, escuta, feedback, alinhamento e comunicação do gestor com equipes e stakeholders do projeto.</p></div><div class="mini"><strong>Evidência útil</strong><p>Percepção dos colaboradores, uso/acesso aos canais, cerimônias, feedback, lacunas de informação, indicadores de engajamento e andamento dos projetos.</p></div><div class="mini"><strong>Instrumento de estilo?</strong><p><span class="tag tag-maybe">Pode fazer sentido</span> Somente se a relação com liderança for explicitada no modelo da pesquisa.</p></div></div>
+      <h4>O cuidado metodológico principal</h4><p>Não misturar “comunicação”, “liderança” e “engajamento” como se fossem a mesma coisa. Uma estrutura possível é: <strong>práticas de comunicação e apoio gerencial → percepção do colaborador → engajamento</strong>. Se medir engajamento com uma escala própria, liderança deve ser mensurada/observada por outro conjunto de evidências.</p>
+      <div class="compare"><div class="bad"><span class="badge">Evite</span><p>“A liderança melhora a comunicação e, consequentemente, aumenta o engajamento.”</p></div><div class="good"><span class="badge">Faça</span><p>Defina comportamentos observáveis: clareza de prioridades, disponibilidade para dúvidas, escuta, feedback, remoção de impedimentos e consistência das informações. Depois investigue se esses comportamentos aparecem junto a melhor acesso à informação e maior engajamento, sem transformar correlação em causalidade automaticamente.</p></div></div>
+    </div>
+  </details>
+
+  <details class="project" data-search="fernanda gatilhos psicológicos growth b2b datatech campanhas marketing governança testes kpi">
+    <summary><span class="student">Fernanda Gomes Silva</span><span class="project-title">Gatilhos psicológicos como alavanca de Growth no B2B em uma DataTech brasileira</span><span class="tag tag-c">Rota C</span></summary>
+    <div class="project-body">
+      <div class="mini-grid"><div class="mini"><strong>Onde liderança entra</strong><p>Na governança de experimentos e coordenação entre Marketing, Vendas, Produto, Dados e demais áreas envolvidas.</p></div><div class="mini"><strong>Evidência útil</strong><p>Campanhas, conversão, receita, NPS, segmentação, resultados dos testes, aprovações e aprendizados de cada ação.</p></div><div class="mini"><strong>Instrumento de estilo?</strong><p><span class="tag tag-no">Não é necessário</span> A pergunta de pesquisa é de growth/marketing.</p></div></div>
+      <h4>O que liderança pode acrescentar</h4><p>Transformar “executar campanhas” em um <strong>sistema de decisão experimental</strong>: quem propõe hipóteses, quem aprova, quem valida dados, como se definem critérios de sucesso, quando uma campanha é escalada/ajustada/interrompida e como o aprendizado volta para a próxima rodada.</p>
+      <div class="compare"><div class="bad"><span class="badge">Evite</span><p>“A liderança deve acompanhar as campanhas e os KPIs.”</p></div><div class="good"><span class="badge">Faça</span><p>Crie uma matriz simples de governança do experimento com responsável, hipótese, público, indicador principal, critérios de decisão, data de revisão e decisão tomada. Isso torna a liderança verificável e conecta gestão à lógica de growth sem mudar o foco do estudo.</p></div></div>
+    </div>
+  </details>
+
+  <details class="project" data-search="ellen afroempreendedorismo luhair tranças pequena empresa proprietária gestora delegação planejamento educadora liderança técnica">
+    <summary><span class="student">Ellen Mayara da Veiga Silva</span><span class="project-title">Afroempreendedorismo feminino: barreiras, estratégias de resistência e contribuições comunitárias</span><span class="tag tag-d">Rota D</span></summary>
+    <div class="project-body">
+      <div class="mini-grid"><div class="mini"><strong>Onde liderança entra</strong><p>Na evolução da fundadora de prestadora central para gestora, educadora, articuladora de rede e referência técnica/cultural.</p></div><div class="mini"><strong>Evidência útil</strong><p>Entrevista com a fundadora, observação direta, rotinas, divisão de tarefas, relação com a assistente, redes de apoio e capacidade de planejar.</p></div><div class="mini"><strong>Instrumento de estilo?</strong><p><span class="tag tag-no">Pouco adequado</span> A estrutura é muito enxuta para fazer da escala o centro da análise.</p></div></div>
+      <h4>O que precisa aparecer no TCC</h4><p>A liderança pode ser trabalhada como <strong>capacidade gerencial</strong>: separar execução de gestão, criar rotina de planejamento, delegar atividades possíveis, transferir conhecimento, desenvolver a assistente, estruturar decisões e construir redes. Isso conversa diretamente com a proposta de a fundadora também atuar como educadora e referência no ecossistema.</p>
+      <div class="compare"><div class="bad"><span class="badge">Evite</span><p>“A empreendedora precisa desenvolver um estilo de liderança mais transformacional.”</p></div><div class="good"><span class="badge">Faça</span><p>Mapeie as atividades hoje concentradas na fundadora; classifique o que só ela pode fazer, o que pode ser padronizado e o que pode ser delegado; defina transferência de conhecimento para a assistente; crie uma rotina gerencial de acompanhamento. A liderança é demonstrada pela mudança de papel e pela capacidade de tornar o negócio menos dependente de uma única pessoa.</p></div></div>
+    </div>
+  </details>
+
+  <details class="project" data-search="diego matriz cadência híbrida banco vendas assessores liderança comercial feedback dashboard kpi treinamento">
+    <summary><span class="student">Diego Justino Alves</span><span class="project-title">Matriz de Cadência Híbrida no setor financeiro: conversão e eficiência operacional</span><span class="tag tag-c">Rota C</span></summary>
+    <div class="project-body">
+      <div class="mini-grid"><div class="mini"><strong>Onde liderança entra</strong><p>Já está muito concreta: monitorar KPIs, identificar desvios, dar feedback, calibrar a matriz e direcionar treinamento.</p></div><div class="mini"><strong>Evidência útil</strong><p>CRM, dashboard, conversão por canal/produto/assessor, aderência à matriz, Teste A/B e registros de feedback/calibragem.</p></div><div class="mini"><strong>Instrumento de estilo?</strong><p><span class="tag tag-no">Não precisa</span> O comportamento gerencial já é observável no processo.</p></div></div>
+      <h4>O que você pode aprender com este caso</h4><p>Observe a liderança como um <strong>ciclo operacional</strong>: dado → diagnóstico → feedback → desenvolvimento → ajuste do processo → novo dado. Esse raciocínio pode ajudar você a tornar a dimensão gerencial do seu próprio TCC mais concreta. Indicadores individuais devem apoiar desenvolvimento e reconhecimento, e não funcionar apenas como mecanismo punitivo de controle.</p>
+      <div class="compare"><div class="bad"><span class="badge">Evite</span><p>“O líder comercial acompanhará o desempenho da equipe.”</p></div><div class="good"><span class="badge">Faça</span><p>Explicite quais KPIs são revisados diariamente/semanalmente, como se identifica baixa aderência à matriz, quando ocorre feedback individual ou coletivo, como boas práticas são compartilhadas e como os achados alteram a régua ou o treinamento. Aqui, liderança é parte do mecanismo de sustentação da melhoria.</p></div></div>
+    </div>
+  </details>
+
+  <details class="project" data-search="bruna centralização informação decisão backoffice banco governança dados liderança fonte única">
+    <summary><span class="student">Bruna Jimenez Martins</span><span class="project-title">Centralização da informação e assertividade da tomada de decisão operacional e estratégica</span><span class="tag tag-c">Rota C</span></summary>
+    <div class="project-body">
+      <div class="mini-grid"><div class="mini"><strong>Onde liderança entra</strong><p>Na arquitetura decisória: fonte confiável, dono do dado, acesso, critérios de escalonamento e uso da informação em decisões operacionais/estratégicas.</p></div><div class="mini"><strong>Evidência útil</strong><p>Entrevistas/questionários com clientes internos do Backoffice, fluxos de informação, retrabalho, divergências, tempo e qualidade percebida da decisão.</p></div><div class="mini"><strong>Instrumento de estilo?</strong><p><span class="tag tag-no">Não é o foco</span> Governança da informação é mais aderente ao problema.</p></div></div>
+      <h4>O que liderança pode acrescentar</h4><p>O ganho não vem apenas de “centralizar”. É preciso descrever <strong>quem responde pela qualidade do dado, quem pode alterar informações críticas, qual fonte é oficial, como divergências são resolvidas, quando algo sobe de nível operacional para estratégico e como a decisão é registrada</strong>.</p>
+      <div class="compare"><div class="bad"><span class="badge">Evite</span><p>“Com informações centralizadas, a liderança poderá decidir melhor.”</p></div><div class="good"><span class="badge">Faça</span><p>Desenhe a cadeia dado → validação → acesso → decisão → registro → revisão. Compare o cenário atual com o proposto e use as percepções dos clientes internos para verificar se a centralização reduz ambiguidade, retrabalho ou conflito entre versões da informação.</p></div></div>
+    </div>
+  </details>
+  <div class="callout success"><h3>Seu TCC não precisa se parecer com os outros</h3><p>Use a árvore das quatro conexões para localizar o papel da liderança no seu próprio projeto. Os oito casos servem como referência de raciocínio, não como modelos que você precisa copiar.</p></div>
+</section>
+
+<section id="instrumentos" class="tab">
+  <div class="section-head"><div><h2>Método e instrumentos: quando medir liderança — e quando não medir</h2><p>“Questionário validado” não é sinônimo de “melhor método”. O instrumento precisa responder ao problema de pesquisa, caber na amostra e medir exatamente o construto escolhido.</p></div><span class="pill">Método antes do formulário</span></div>
+  <div class="callout danger"><h3>Regra metodológica</h3><p><strong>Não aplique uma escala só para dizer que aplicou liderança.</strong> Se o resultado da escala não será usado para responder uma pergunta, testar uma relação, organizar a análise ou fundamentar uma recomendação, ela provavelmente não pertence ao estudo.</p></div>
+  <div class="grid g2">
+    <article class="card instrument"><h3>EAEG — Escala de Avaliação do Estilo Gerencial</h3><div class="meta"><span class="micro">Melo (2004)</span><span class="micro">19 itens</span><span class="micro">Tarefa · Relacionamento · Situação</span></div><p><strong>Serve para:</strong> avaliar, pela percepção dos subordinados, comportamentos gerenciais do chefe no cotidiano.</p><p><strong>Boa escolha quando:</strong> o objetivo realmente envolve estilo/comportamento gerencial e há um conjunto de respondentes que conhece o mesmo contexto de liderança.</p><p><strong>Não é boa escolha quando:</strong> o TCC só precisa definir quem monitora KPI, quem aprova uma ação ou quem conduz uma implantação.</p></article>
+    <article class="card instrument"><h3>MLQ — Multifactor Leadership Questionnaire</h3><div class="meta"><span class="micro">Bass &amp; Avolio</span><span class="micro">Full Range Leadership</span><span class="micro">Transformacional · Transacional · Passivo/Evitativo</span></div><p><strong>Serve para:</strong> avaliar um espectro de comportamentos de liderança e resultados associados.</p><p><strong>Boa escolha quando:</strong> liderança transformacional/transacional está explicitamente no modelo teórico e na pergunta de pesquisa.</p><p class="license"><strong>Atenção:</strong> é instrumento comercial/licenciado. Não copie itens de sites ou trabalhos alheios; verifique autorização/uso institucional antes da aplicação.</p></article>
+    <article class="card instrument"><h3>LMX — Leader–Member Exchange</h3><div class="meta"><span class="micro">Graen &amp; Uhl-Bien</span><span class="micro">Relação líder–liderado</span></div><p><strong>Serve para:</strong> investigar a qualidade da relação de troca entre líder e liderado — confiança, respeito, suporte e parceria.</p><p><strong>Boa escolha quando:</strong> a relação com a chefia é mais importante que “o estilo do líder”, por exemplo em estudos sobre apoio, comunicação, comprometimento ou experiência do colaborador.</p><p><strong>Cuidado:</strong> confirme a versão e a validação linguística/cultural que serão utilizadas antes de aplicar em português.</p></article>
+    <article class="card instrument"><h3>UWES-9 — Engajamento no trabalho</h3><div class="meta"><span class="micro">Schaufeli, Bakker &amp; Salanova</span><span class="micro">9 itens</span><span class="micro">Vigor · Dedicação · Absorção</span></div><p><strong>Não é escala de liderança.</strong> Ela mede engajamento. Pode ser útil quando o resultado do estudo é engajamento — como em um trabalho do tipo Isabelly — desde que o fator de liderança/comunicação seja tratado separadamente.</p><p><strong>Erro comum:</strong> aplicar UWES e depois concluir que “a liderança é boa”. O instrumento não mede isso.</p></article>
+  </div>
+  <h3 style="color:var(--navy);margin-top:26px">Alternativas que podem ser melhores para o seu TCC</h3>
+  <div class="table-wrap"><table class="table"><thead><tr><th>Situação</th><th>Melhor evidência</th><th>O que analisar</th><th>Exemplos atuais</th></tr></thead><tbody>
+    <tr><td>Solução precisa ser implantada</td><td>Matriz de responsabilidades + documentos + indicadores</td><td>Patrocínio, decisão, treinamento, feedback, monitoramento, escalonamento</td><td>Thamires, Raquel, Fernanda, Diego, Bruna</td></tr>
+    <tr><td>Amostra muito pequena</td><td>Entrevista semiestruturada + observação</td><td>Papéis, decisões, delegação, barreiras, desenvolvimento de pessoas</td><td>Ellen</td></tr>
+    <tr><td>Pesquisa bibliográfica</td><td>Revisão teórica estruturada</td><td>Capacidades gerenciais necessárias, riscos, governança e accountability</td><td>Kevelin</td></tr>
+    <tr><td>Resultado humano é central</td><td>Escalas distintas para construtos + dados contextuais</td><td>Separar liderança/comunicação de engajamento/desempenho</td><td>Isabelly</td></tr>
+  </tbody></table></div>
+  <div class="callout info"><h3>Como criar um roteiro de entrevista sem cair no achismo</h3><p>Monte perguntas a partir de <strong>categorias teóricas e decisões reais</strong>. Exemplo para implantação: “Como a mudança foi comunicada?”, “Quem participou das decisões?”, “Que treinamento foi oferecido?”, “O que acontece quando surge um desvio?”, “Como o feedback do usuário altera o processo?”. Depois categorize as respostas e confronte-as com documentos, indicadores ou observação.</p></div>
+</section>
+
+<section id="exemplos" class="tab">
+  <div class="section-head"><div><h2>Do “bonitinho” ao defendível: o que significa aprofundar</h2><p>Um bom parágrafo de liderança não é maior porque tem mais palavras. Ele é melhor porque especifica mecanismo, evidência, responsabilidade, critério e consequência.</p></div><span class="pill">Não faça / Faça de verdade</span></div>
+  <div class="ladder">
+    <div class="level"><h3>1 · Genérico</h3><p>“A liderança é importante para motivar a equipe e garantir melhores resultados.”</p><p><strong>Problema:</strong> caberia em qualquer TCC, qualquer empresa e qualquer setor.</p></div>
+    <div class="level"><h3>2 · Operacional, mas raso</h3><p>“O gestor deve acompanhar indicadores semanalmente e dar feedback aos colaboradores.”</p><p><strong>Melhorou:</strong> há ação. <strong>Ainda falta:</strong> quais indicadores, feedback sobre o quê, com qual critério e o que acontece depois.</p></div>
+    <div class="level"><h3>3 · Defendível</h3><p>“A liderança revisa os indicadores definidos para a solução, identifica desvios frente aos critérios previamente estabelecidos, registra a causa provável, define ação e responsável, acompanha o efeito da correção e utiliza o aprendizado para recalibrar processo ou treinamento.”</p><p><strong>Agora existe:</strong> ciclo gerencial verificável.</p></div>
+  </div>
+
+  <h3 style="color:var(--navy);margin-top:28px">Seis perguntas que tornam a recomendação robusta</h3>
+  <div class="grid g3">
+    <div class="card"><h3>1. Quem?</h3><p>Quem é patrocinador, decisor, executor, consultado e informado? “A liderança” é amplo demais.</p></div>
+    <div class="card"><h3>2. O quê?</h3><p>Qual comportamento concreto: aprovar, comunicar, treinar, analisar, priorizar, dar feedback, resolver conflito, delegar?</p></div>
+    <div class="card"><h3>3. Quando?</h3><p>Em que etapa ou cadência: implantação, piloto, revisão diária/semanal, fechamento mensal, ocorrência de exceção?</p></div>
+    <div class="card"><h3>4. Com base em quê?</h3><p>Qual evidência aciona a decisão: KPI, relato do usuário, erro, atraso, desvio, risco, dado de CRM, documento?</p></div>
+    <div class="card"><h3>5. O que acontece?</h3><p>Qual ação decorre do achado: corrigir processo, treinar, escalar, ajustar mensagem, revisar regra, redistribuir responsabilidade?</p></div>
+    <div class="card"><h3>6. Como saber?</h3><p>Qual resultado posterior mostra eficácia: adesão, tempo, erro, conversão, retrabalho, confiabilidade, satisfação, cumprimento de prazo?</p></div>
+  </div>
+
+  <div class="callout success"><h3>Exemplo robusto — dashboard não “lidera” ninguém</h3><p><strong>Problema:</strong> o indicador mostra uma exceção. <strong>Responsável:</strong> gestor definido no processo. <strong>Ação:</strong> valida a qualidade do dado, identifica a causa, decide entre correção operacional ou escalonamento. <strong>Registro:</strong> decisão, responsável e prazo. <strong>Aprendizado:</strong> verifica o efeito na medição seguinte. É nessa cadeia que a liderança aparece — não na frase “o dashboard apoiará a liderança”.</p></div>
+  <div class="callout info"><h3>Exemplo robusto — gestão da mudança não é “motivar”</h3><p>Em uma implantação digital, a liderança pode selecionar usuários-chave para validação, explicar o problema que a mudança resolve, disponibilizar treinamento e suporte, ouvir objeções, remover barreiras, acompanhar adesão e corrigir o processo quando o uso real divergir do esperado. Cada etapa pode produzir evidência para o TCC.</p></div>
+</section>
+
+<section id="escrita" class="tab">
+  <div class="section-head"><div><h2>Como a dimensão de liderança vira texto no TCC</h2><p>Em vez de criar um capítulo isolado de “Estilos de Liderança”, distribua a liderança nos pontos em que ela realmente explica ou operacionaliza o trabalho.</p></div><span class="pill">Problema → método → análise → implantação</span></div>
+  <div class="formula"><div>Achado</div><div>Evidência</div><div>Papel gerencial</div><div>Interpretação</div><div>Ação</div><div>Indicador</div></div>
+  <div class="recipe"><div class="rnum">1</div><div class="rbody"><h4>Introdução / delimitação</h4><p>Explique <strong>por que o componente humano-gerencial é relevante</strong> para o problema. Não anuncie “liderança” se ela não for variável central. Ex.: a implantação depende da adesão dos usuários; decisões dependem do uso confiável da informação.</p></div></div>
+  <div class="recipe"><div class="rnum">2</div><div class="rbody"><h4>Referencial teórico</h4><p>Inclua apenas a teoria necessária para interpretar o fenômeno. Se o foco é estilo gerencial, fundamente estilo. Se o foco é mudança, comunicação, governança, feedback ou tomada de decisão, fundamente essas práticas e o papel gerencial correspondente.</p></div></div>
+  <div class="recipe"><div class="rnum">3</div><div class="rbody"><h4>Método</h4><p>Diga <strong>como a dimensão será observada</strong>: escala validada, entrevista, observação, documentos, CRM, dashboard, atas, indicadores, registros de treinamento. O método deve gerar evidência que permita responder à pergunta.</p></div></div>
+  <div class="recipe"><div class="rnum">4</div><div class="rbody"><h4>Resultados</h4><p>Apresente o que os dados mostram antes de recomendar. Ex.: baixa aderência ao processo; informação divergente; ausência de rotina de revisão; feedback irregular; usuários relatam dificuldade; determinada unidade apresenta padrão atípico.</p></div></div>
+  <div class="recipe"><div class="rnum">5</div><div class="rbody"><h4>Discussão</h4><p>Confronte evidência e teoria: por que o padrão encontrado importa? Que mecanismo pode explicar o resultado? Quais limites existem? Evite transformar opinião de respondente em verdade absoluta ou associação em causalidade.</p></div></div>
+  <div class="recipe"><div class="rnum">6</div><div class="rbody"><h4>Proposta / implantação</h4><p>Defina papéis, responsabilidades, comunicação, treinamento, rituais de gestão, critérios de decisão, escalonamento, feedback e indicadores. Aqui a Rota C ganha corpo.</p></div></div>
+  <div class="recipe"><div class="rnum">7</div><div class="rbody"><h4>Conclusão</h4><p>Mostre o que foi possível afirmar <strong>com base nos dados</strong>. Se a liderança não foi medida, não conclua que um estilo específico “causou” o resultado. Conclua sobre o papel gerencial que foi de fato observado ou proposto.</p></div></div>
+
+  <h3 style="color:var(--navy);margin-top:28px">Modelo de parágrafo analítico completo</h3>
+  <div class="card accent"><p><strong>Achado:</strong> a equipe apresenta baixa aderência à nova rotina em determinados pontos do processo. <strong>Evidência:</strong> registros operacionais e relatos dos usuários mostram concentração de erros nas mesmas etapas. <strong>Papel da liderança:</strong> o gestor responsável não atua apenas como cobrador do resultado; ele precisa identificar se o desvio decorre de regra pouco clara, treinamento insuficiente ou barreira do processo. <strong>Interpretação:</strong> o problema, portanto, não se reduz à “resistência das pessoas”, pois pode refletir falhas de implantação. <strong>Ação:</strong> recomenda-se revisão dirigida das etapas críticas, feedback com base em casos reais e ajuste do treinamento ou da própria rotina. <strong>Indicador:</strong> a eficácia deve ser verificada pela evolução da aderência, redução de erros e estabilização do tempo de execução.</p></div>
+  <div class="callout warn"><h3>Importante</h3><p>Esse modelo é uma <strong>estrutura de raciocínio</strong>, não um texto para copiar e colar. Você deve substituí-lo pelas evidências, autores, variáveis, indicadores e contexto reais do seu próprio TCC.</p></div>
+</section>
+
+<section id="checklist" class="tab">
+  <div class="section-head"><div><h2>Checklist antes de entregar a parte de liderança</h2><p>Marque apenas quando a resposta estiver realmente demonstrada no texto. O progresso fica salvo neste navegador.</p></div><span class="pill">Autoverificação</span></div>
+  <div class="progress"><span id="progressBar"></span></div><div class="progress-label"><span id="progressText">0 de 18 itens concluídos</span><span id="progressPct">0%</span></div>
+  <div class="check-group"><h3>1 · Relevância</h3>
+    <label class="check"><input type="checkbox" data-check><span>Consigo explicar em uma frase <strong>por que liderança/gestão entra no meu problema</strong>, sem usar a frase “porque liderança é importante”.</span></label>
+    <label class="check"><input type="checkbox" data-check><span>Identifiquei minha rota principal: variável, mecanismo, governança da implantação ou capacidade gerencial.</span></label>
+    <label class="check"><input type="checkbox" data-check><span>Não inseri um estilo de liderança apenas para cumprir formalmente o pilar.</span></label>
+  </div>
+  <div class="check-group"><h3>2 · Método</h3>
+    <label class="check"><input type="checkbox" data-check><span>Se usei escala validada, ela mede exatamente o construto presente no meu objetivo/pergunta.</span></label>
+    <label class="check"><input type="checkbox" data-check><span>Minha amostra e meu desenho fazem sentido para o instrumento escolhido.</span></label>
+    <label class="check"><input type="checkbox" data-check><span>Se não usei escala, tenho outra evidência adequada: entrevista, observação, documento, KPI, CRM ou registro de processo.</span></label>
+  </div>
+  <div class="check-group"><h3>3 · Análise</h3>
+    <label class="check"><input type="checkbox" data-check><span>Separei fato/dado, interpretação teórica e recomendação.</span></label>
+    <label class="check"><input type="checkbox" data-check><span>Não confundi comunicação, liderança, engajamento, desempenho e satisfação como se fossem o mesmo construto.</span></label>
+    <label class="check"><input type="checkbox" data-check><span>Não afirmei causalidade quando meus dados permitem apenas associação, descrição ou percepção.</span></label>
+  </div>
+  <div class="check-group"><h3>4 · Implantação e governança</h3>
+    <label class="check"><input type="checkbox" data-check><span>Está claro quem patrocina, decide, executa, apoia e acompanha a solução.</span></label>
+    <label class="check"><input type="checkbox" data-check><span>Descrevi comunicação, treinamento e suporte quando a solução muda a rotina de pessoas.</span></label>
+    <label class="check"><input type="checkbox" data-check><span>Defini a cadência de acompanhamento e os indicadores usados pela gestão.</span></label>
+    <label class="check"><input type="checkbox" data-check><span>Expliquei o que acontece quando o indicador mostra desvio, erro ou resultado abaixo do esperado.</span></label>
+  </div>
+  <div class="check-group"><h3>5 · Escrita defendível</h3>
+    <label class="check"><input type="checkbox" data-check><span>Minhas recomendações dizem quem faz, o que faz e com base em qual evidência.</span></label>
+    <label class="check"><input type="checkbox" data-check><span>As recomendações estão ligadas diretamente aos achados do meu próprio TCC.</span></label>
+    <label class="check"><input type="checkbox" data-check><span>Consigo mostrar como a eficácia da recomendação será monitorada.</span></label>
+    <label class="check"><input type="checkbox" data-check><span>Evitei frases universais como “o líder deve motivar”, “a comunicação deve ser clara” ou “a liderança deve acompanhar”.</span></label>
+    <label class="check"><input type="checkbox" data-check><span>Uma banca consegue seguir a cadeia: problema → evidência → papel gerencial → ação → resultado esperado.</span></label>
+  </div>
+  <h3 style="color:var(--navy);margin-top:28px">Referências-base para instrumentos e conceitos de mensuração</h3>
+  <div class="card refs"><ul>
+    <li>MELO, E. A. A. <strong>Escala de Avaliação do Estilo Gerencial (EAEG): desenvolvimento e validação.</strong> Revista Psicologia: Organizações e Trabalho, v. 4, n. 2, p. 31–62, 2004.</li>
+    <li>BASS, B. M.; AVOLIO, B. J. <strong>Multifactor Leadership Questionnaire (MLQ).</strong> Instrumento de avaliação do modelo Full Range Leadership. Uso sujeito às condições de licenciamento do editor.</li>
+    <li>GRAEN, G. B.; UHL-BIEN, M. <strong>Relationship-based approach to leadership: Development of Leader–Member Exchange (LMX) Theory of Leadership over 25 years.</strong> The Leadership Quarterly, v. 6, n. 2, 1995.</li>
+    <li>SCHAUFELI, W. B.; BAKKER, A. B.; SALANOVA, M. <strong>The Measurement of Work Engagement With a Short Questionnaire: A Cross-National Study.</strong> Educational and Psychological Measurement, v. 66, n. 4, p. 701–716, 2006.</li>
+  </ul><p><strong>Nota:</strong> antes de aplicar qualquer instrumento, verifique a versão adequada ao idioma/contexto, condições de uso, instruções de pontuação e aderência ao desenho metodológico aprovado.</p></div>
+</section>
+</main>
+<footer class="footer"><strong>Orientação Integrada II — Liderança · Administração</strong><br>Material de consulta para desenvolvimento dos TCCs · Atualizado em agosto de 2026. Use este guia como apoio ao desenvolvimento do seu TCC; as escolhas metodológicas devem permanecer coerentes com o problema, os objetivos e a coleta de dados do seu projeto.</footer>
+<script>
+const search=document.getElementById('projectSearch');
+const projects=[...document.querySelectorAll('details.project')];
+if(search){search.addEventListener('input',()=>{
+  const q=search.value.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,''); let n=0;
+  projects.forEach(p=>{const txt=(p.dataset.search+' '+p.innerText).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,''); const show=txt.includes(q); p.style.display=show?'':'none'; if(show)n++;});
+  document.getElementById('projectCount').textContent=n+(n===1?' projeto':' projetos');
+});}
+
+const checks=[...document.querySelectorAll('[data-check]')];
+const key='lideranca-tcc-checklist-v2026';
+function updateProgress(){const done=checks.filter(c=>c.checked).length,total=checks.length,pct=total?Math.round(done/total*100):0;document.getElementById('progressBar').style.width=pct+'%';document.getElementById('progressText').textContent=`${done} de ${total} itens concluídos`;document.getElementById('progressPct').textContent=pct+'%';try{localStorage.setItem(key,JSON.stringify(checks.map(c=>c.checked)))}catch(e){}}
+try{const saved=JSON.parse(localStorage.getItem(key)||'[]');checks.forEach((c,i)=>c.checked=!!saved[i]);}catch(e){}
+checks.forEach(c=>c.addEventListener('change',updateProgress));updateProgress();
+</script>
+</body>
+</html>
